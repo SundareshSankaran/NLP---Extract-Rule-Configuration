@@ -1,4 +1,4 @@
-%let projectName="cas-shared-default/Analytics_Project_151ee951-3783-4f16-b6dd-f882149a4daa";
+%let projectName="cas-shared-default/Analytics_Project_6d5f6a11-799a-4743-9760-3bd61ad69714";
 %let targetCaslib=PUBLIC;
 
 %let casServer=%scan("&projectName.",1,"/");
@@ -90,7 +90,7 @@ proc cas;
    saveresult ruleConfigList dataout=work.results;
 
    n = dim(ruleConfigList);
-   do i = 1 to 1;
+   do i = 1 to n;
       nameTable=ruleConfigList[i,"Name"];
       typeOfRuleconfig=ruleConfigList[i,"Type"];
 
@@ -98,12 +98,15 @@ proc cas;
 		 table={name=nameTable, caslib=projectCaslib}
          casout={name="tempRuleConfig", caslib=targetCaslib, replace=True}
       ;
-
+      
+      if typeOfRuleConfig=="CATEGORY" then do;
       dataStep.runCode / 
          code=CategoryCode;
       
-      print typeOfRuleconfig;
+      end;
+      else do;
 
+      end;
 
 
       table.save /
