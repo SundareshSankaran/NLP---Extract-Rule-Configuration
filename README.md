@@ -1,5 +1,9 @@
 # NLP - Extract-Rule-Configuration
-A Test Flow to demonstrate the SAS Studio Custom Step NLP - Extract Rule Configuration
+
+A test Flow to demonstrate the use of the SAS Studio Custom Step NLP - Extract Rule Configuration custom step.
+
+For example purposes only.  Note that this makes use of the SAS Studio Custom Step contributed to the SAS Software GitHub repo, at this [folder](https://github.com/sassoftware/sas-studio-custom-steps/tree/main/NLP%20-%20Extract%20Rule%20Configuration).  
+
 
 ## Import the example
 
